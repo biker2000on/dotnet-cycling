@@ -1,54 +1,9 @@
-﻿<Bar Mode="BarMode.VerticalInline"
-     CollapseMode="BarCollapseMode.Small"
-     Breakpoint="Breakpoint.Desktop"
-     NavigationBreakpoint="Breakpoint.Tablet"
-     ThemeContrast="ThemeContrast.Dark">
-    <BarToggler />
-    <BarBrand>
-        <BarItem>
-            <BarLink To="">
-                <BarIcon IconName="IconName.Dashboard" />
-                Home
-            </BarLink>
-        </BarItem>
-    </BarBrand>
-    <BarMenu>
-        <BarStart>
-            <BarItem>
-                <BarLink To="dashboard">Dashboard</BarLink>
-            </BarItem>
-            <BarItem>
-                <BarLink To="counter">
-                    <BarIcon IconName="IconName.Dashboard" />
-                    Counter
-                </BarLink>
-            </BarItem>
-            <BarItem>
-                <BarLink To="fetchdata">Fetch Data</BarLink>
-            </BarItem>
-            <BarItem>
-                <BarDropdown>
-                    <BarDropdownToggle>
-                        <BarIcon IconName="IconName.Edit" />
-                        Dropdown
-                    </BarDropdownToggle>
-                    <BarDropdownMenu>
-                        <BarDropdownItem>Action</BarDropdownItem>
-                        <BarDropdownItem>Another action</BarDropdownItem>
-                    </BarDropdownMenu>
-                </BarDropdown>
-            </BarItem>
-        </BarStart>
-    </BarMenu>
-</Bar>
+﻿<RadzenPanelMenu>
+    <RadzenPanelMenuItem Text="Home" Icon="home" Path="dashboard" />
+    <RadzenPanelMenuItem Text="Counter" Icon="account_box"Path="counter" />
+    <RadzenPanelMenuItem Text="Users" Icon="account_box"/>
+    <RadzenPanelMenuItem Text="Fetch Data" Path="fetchdata"/>
+</RadzenPanelMenu>
 
 @code {
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
 }

@@ -2,34 +2,35 @@
 
 <PageTitle>Cycling</PageTitle>
 
-<Layout Sider>
-    <LayoutSider>
-        <LayoutSiderContent>
-            <NavMenu />
-        </LayoutSiderContent>
-    </LayoutSider>
-    <Layout>
-        <LayoutHeader Fixed>
-            <Bar Breakpoint="Breakpoint.Desktop"
-                 Background="Background.Light"
-                 ThemeContrast="ThemeContrast.Light">
-                <BarBrand>
-                    Cycle Tourmap
-                </BarBrand>
-                <BarToggler />
-                <BarMenu>
-                    <BarEnd>
-                        <LoginDisplay />
-                        <BarItem>
-                            <BarLink To="https://docs.microsoft.com/aspnet/" >About</BarLink>
-                        </BarItem>
-                    </BarEnd>
-                </BarMenu>
-            </Bar>
-        </LayoutHeader>
-        <LayoutContent>
-            @Body
-        </LayoutContent>
-    </Layout>
-</Layout>
+<RadzenLayout>
+    <RadzenHeader>
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" JustifyContent="JustifyContent.SpaceBetween">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem">
+                <RadzenSidebarToggle Click="@(() => sidebar1Expanded = !sidebar1Expanded)" />
+                <RadzenLabel Text="Cycle Tourmap" />
+            </RadzenStack>
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" JustifyContent="JustifyContent.End">
+                <LoginDisplay />
+            </RadzenStack>
+        </RadzenStack>
+    </RadzenHeader>
+    <RadzenSidebar @bind-Expanded="@sidebar1Expanded">
+        <NavMenu />
+    </RadzenSidebar>
+    <RadzenBody>
+        @Body
+    </RadzenBody>
+    <RadzenFooter>
+        Footer
+    </RadzenFooter>
+</RadzenLayout>
 
+
+<RadzenContextMenu />
+<RadzenDialog />
+<RadzenNotification />
+<RadzenTooltip />
+
+@code {
+    bool sidebar1Expanded = true;
+}

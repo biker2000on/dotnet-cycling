@@ -14,27 +14,14 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <RadzenDataGrid Data="@forecasts" TItem="WeatherForecast" AllowSorting="true" AllowMultiColumnSorting="true">
+        <Columns>
+            <RadzenDataGridColumn TItem="WeatherForecast" Property="Date.ToShortDateString()" Title="Date" />
+            <RadzenDataGridColumn TItem="WeatherForecast" Property="TemperatureC" Title="Temp (C)" />
+            <RadzenDataGridColumn TItem="WeatherForecast" Property="TemperatureF" Title="Temp (F)" />
+            <RadzenDataGridColumn TItem="WeatherForecast" Property="Summary" Title="Summary" />
+        </Columns>
+    </RadzenDataGrid>
 }
 
 @code {
