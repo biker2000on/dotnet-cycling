@@ -1,0 +1,35 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>Cycling</PageTitle>
+
+<Layout Sider>
+    <LayoutSider>
+        <LayoutSiderContent>
+            <NavMenu />
+        </LayoutSiderContent>
+    </LayoutSider>
+    <Layout>
+        <LayoutHeader Fixed>
+            <Bar Breakpoint="Breakpoint.Desktop"
+                 Background="Background.Light"
+                 ThemeContrast="ThemeContrast.Light">
+                <BarBrand>
+                    Cycle Tourmap
+                </BarBrand>
+                <BarToggler />
+                <BarMenu>
+                    <BarEnd>
+                        <LoginDisplay />
+                        <BarItem>
+                            <BarLink To="https://docs.microsoft.com/aspnet/" >About</BarLink>
+                        </BarItem>
+                    </BarEnd>
+                </BarMenu>
+            </Bar>
+        </LayoutHeader>
+        <LayoutContent>
+            @Body
+        </LayoutContent>
+    </Layout>
+</Layout>
+
