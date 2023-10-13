@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
-using Radzen;
+using MudBlazor.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,12 +23,8 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
 
-// Radzen added services
-builder.Services.AddScoped<ContextMenuService>();
-builder.Services.AddScoped<DialogService>();
-builder.Services.AddScoped<NotificationService>();
-builder.Services.AddScoped<TooltipService>();
-
+// MudBlazor added services
+builder.Services.AddMudServices();
 
 var app = builder.Build();
 

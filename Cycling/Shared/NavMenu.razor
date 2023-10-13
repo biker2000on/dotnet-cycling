@@ -1,9 +1,9 @@
-﻿<RadzenPanelMenu>
-    <RadzenPanelMenuItem Text="Home" Icon="home" Path="dashboard" />
-    <RadzenPanelMenuItem Text="Counter" Icon="account_box"Path="counter" />
-    <RadzenPanelMenuItem Text="Fetch Data" Path="fetchdata" Icon="cloud"/>
-    <RadzenPanelMenuItem Text="Radzen Examples" Path="radzen" Icon="zoom_in" />
-</RadzenPanelMenu>
+﻿<MudNavMenu>
+    <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
+    <MudNavLink Href="/counter" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Alarm">Counter</MudNavLink>
+    <MudNavLink Href="/fetchdata" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Outlined.Cloud">Fetch Data</MudNavLink>
+    <MudNavLink Href="/mudblazor" Match="NavLinkMatch.Prefix">MudBlazor Examples</MudNavLink>
+</MudNavMenu>
 
 @code {
 }
