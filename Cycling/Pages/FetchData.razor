@@ -14,14 +14,15 @@
 }
 else
 {
-    <RadzenDataGrid Data="@forecasts" TItem="WeatherForecast" AllowSorting="true" AllowMultiColumnSorting="true">
+
+    <MudDataGrid Items="@forecasts">
         <Columns>
-            <RadzenDataGridColumn TItem="WeatherForecast" Property="Date.ToShortDateString()" Title="Date" />
-            <RadzenDataGridColumn TItem="WeatherForecast" Property="TemperatureC" Title="Temp (C)" />
-            <RadzenDataGridColumn TItem="WeatherForecast" Property="TemperatureF" Title="Temp (F)" />
-            <RadzenDataGridColumn TItem="WeatherForecast" Property="Summary" Title="Summary" />
+            <PropertyColumn Property="x => x.Date.ToShortDateString()" Title="Date" />
+            <PropertyColumn Property="x => x.TemperatureC" />
+            <PropertyColumn Property="x => x.TemperatureF" />
+            <PropertyColumn Property="x => x.Summary" />
         </Columns>
-    </RadzenDataGrid>
+    </MudDataGrid>
 }
 
 @code {
